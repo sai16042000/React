@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
- 
+ background: linear-gradient(black,brown,black);
 }
 
 code {
@@ -14,10 +14,14 @@ code {
 }
 h1{
   font-size: 5rem;
+  color:white;
 }
 h2{
  display: inline;
 margin:1rem;
+}
+h3{
+  color:white;
 }
 
 
