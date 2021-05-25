@@ -1,4 +1,4 @@
-import { url } from "inspector";
+
 import React, {Component} from "react";
 import Second from "./second";
 interface IState{
