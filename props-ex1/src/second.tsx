@@ -8,9 +8,9 @@ interface IProps{
     key3:string
 }
 class Second extends Component<IProps,IState>{
-    constructor(props:IProps){
-        super(props);
-    }
+    // constructor(props:IProps){
+    //     super(props);
+    // }
     render(){
         return(
           <React.Fragment>
