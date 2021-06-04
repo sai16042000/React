@@ -24,7 +24,6 @@ interface IState{
 interface IProps{
 
 }
-
 class App extends Component<IProps,IState>{
     constructor(props:IProps){
         super(props);
@@ -32,7 +31,6 @@ class App extends Component<IProps,IState>{
             data : []
         }
     };
-
     componentDidMount(){
        axios.get("https://restcountries.eu/rest/v2/all").then((posRes)=>{
             this.setState({
@@ -42,7 +40,6 @@ class App extends Component<IProps,IState>{
 
        });
     }
-
     render(){
       return(
         <React.Fragment>
@@ -70,15 +67,9 @@ class App extends Component<IProps,IState>{
               </TableBody>
             </Table>
         </TableContainer>
-      
      </React.Fragment>
       )
     }
-
-
-
-
-
 };
 
 export default App;
