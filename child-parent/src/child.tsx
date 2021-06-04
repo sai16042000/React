@@ -1,22 +1,41 @@
-import React from "react";
+import React, { Component } from "react";
 
-import {Component} from "react";
 interface IState{}
-interface Iprops{
-    key1:(data:any)=>void;
+
+interface IProps{
+    fun_one : (arg1:any)=>any;
+    fun_two : (arg1:any)=>void;
+    fun_three : (arg1:any)=>void;
 };
-class Child extends Component<Iprops,IState>{
-    constructor(props:Iprops){
-        super(props);
-        
-        
-    }
+
+class Child extends Component<IProps,IState>{
+    
+    ref1 = React.createRef<HTMLInputElement>();
+    ref2 = React.createRef<HTMLInputElement>();
+    ref3 = React.createRef<HTMLInputElement>();
+
+    // constructor(props:IProps){
+    //     super(props);
+    // }
+
     render(){
         return(
             <React.Fragment>
-            <button onClick={()=>{this.props.key1("reactjs with typescript")}}>change</button>
+                <input type="text" ref={this.ref1}></input>
+                <input type="text" ref={this.ref2}></input>
+                <input type="text" ref={this.ref3}></input>
+
+                <br></br>
+
+                <button onClick={()=>{this.props.fun_one(this.ref1.current?.value)}} style={{marginRight:140}}>Button1</button>    
+                <button onClick={()=>{this.props.fun_two(this.ref2.current?.value)}} style={{marginRight:100}}>Button2</button>   
+                <button onClick={()=>{this.props.fun_three(this.ref3.current?.value)}}>Button3</button>
+
+
             </React.Fragment>
         )
     }
-}
+
+};
+
 export default Child;
